@@ -1,0 +1,238 @@
+﻿@model AnimeFlixView.ViewModel.MainTelaViewModel
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="hero">
+    <button class="streamium-prev glyphicon glyphicon-menu-left slick-arrow" style="display: block;"></button>
+    <div class="hero-slider" role="toolbar">
+        <div class="slider-block" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 1349px; height: 578.143px;" data-slick-index="-1" aria-hidden="true">
+            <article class="content-overlay" >
+       
+                <div class="container-fluid rel" style="background-image:url('@Model.Capa');    background-repeat: no-repeat;    background-position: center bottom;">
+                    <div class="row rel">
+                        <div class="col-sm-6 rel hidden-xs">               
+                            <div class="synopis-outer">
+                                <div class="synopis-middle">
+                                    <div class="synopis-inner">
+                                        <h2>@Model.TituloCanal</h2>
+                                        <p>@Model.Descricao</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 rel">
+                            <a class="icon-play glyphicon glyphicon-play" aria-hidden="true" href="#" tabindex="-1"></a>
+                        </div>
+                    </div>
+                </div>
+            </article><!--/.content-overlay-->
+        </div>
+
+        @*
+            @for (int i = 0; i < 5; i++)
+                {
+                    <div class="slider-block" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 1349px; height: 578.143px;" data-slick-index="-1" aria-hidden="true">
+                        <img src="~/JsDownload/1280px-Star_Wars_Logo.svg_.png">
+                        <article class="content-overlay">
+                            <div class="container-fluid rel">
+                                <div class="row rel">
+                                    <div class="col-sm-6 rel hidden-xs">
+                                        <div class="synopis-outer">
+                                            <div class="synopis-middle">
+                                                <div class="synopis-inner">
+                                                    <h2>Star Wars Playlist/Series Example</h2>
+                                                    <p>Three decades after the defeat of the Galactic Empire, a new threat arises. The First Order attempts to rule the galaxy and only a ragtag group of heroes can stop them, along with the help of the Resistance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 rel">
+                                        <a class="icon-play glyphicon glyphicon-play" aria-hidden="true" href="#" tabindex="-1"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article><!--/.content-overlay-->
+                    </div>
+                }*@
+    </div><!--/.hero-slider-->
+    <button class="streamium-next glyphicon glyphicon-menu-right slick-arrow" style="display: block;"></button>
+</section><!--/.hero-->
+@foreach (var item in Model.Itens)
+{
+    <section class="videos">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 video-header">
+                    <h3>@item.Categoria</h3>
+                </div><!--/.col-sm-12-->
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="prev_next">
+                    </div>
+                    <div class="carousels">
+
+                        @foreach (var video in @item.Videos)
+                        {
+                            <div class="tile" data-slick-index="16" aria-hidden="true" tabindex="-1" style="width: 210px; opacity: 1;">
+                                <a href="#" class="tile_reviews">1 reviews</a>
+                                <div class="tile_media">
+                                    <img class="tile_img" src="@video.ImagemVideo" alt="">
+                                </div>
+                                <a class="tile_play" asp-controller="Home" asp-action="AbrirVideo" asp-route-linkVideo="@video.LinkVideo"  asp-route-id="@ViewBag.IdCanal" tabindex="-1">
+                                    <span class="tile_play_white"></span>
+                                    <i class="fa fa-play-circle" aria-hidden="true"></i>
+                                </a>
+                                <div class="tile_details">
+                                    <div class="tile_meta">
+                                        <h4>@video.Titulo</h4>
+                                        <p>>@video.Descricao</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div><!--/.carousel-->
+                </div><!--/.col-sm-12-->
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/.videos-->
+}
+
+@section scripts{
+    <script>
+        /*--------------------------------------------------------*/
+        /* jQuery functions
+        /*--------------------------------------------------------*/
+        jQuery(document).ready(function ($) {
+
+            $(window).scroll(function (event) {
+                var scroll = $(window).scrollTop();
+                if (scroll > 100) {
+                    $(".cd-main-header").css("background", "rgba(0,0,0,0.6)");
+                } else {
+                    $(".cd-main-header").css("background", "rgba(0,0,0,0)");
+                }
+            });
+
+            // Initialise Slider
+
+            $('.hero-slider').slick({
+                prevArrow: $('.streamium-prev'),
+                nextArrow: $('.streamium-next'),
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                autoplay: true,
+                adaptiveHeight: true,
+                autoplaySpeed: 8000,
+                mobileFirst: true,
+                pauseOnHover: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            dots: false
+                        }
+                    }
+                ]
+            });
+
+            var vh = $(window).innerWidth() / 21 * 9;
+            var wh = $(window).innerWidth();
+            $('.hero-slider .slider-block').css({ 'height': vh, 'width': wh });
+
+
+            $('.carousels').each(function (i, obj) {
+                //    debugger
+                $(this).slick({
+                    appendArrows: $(this).prev(),
+                    prevArrow: '<button class="streamium-carousel-prev glyphicon glyphicon-menu-left slick-arrow" style= "display: block;"></button>>',
+                    nextArrow: '<button class="streamium-carousel-next glyphicon glyphicon-menu-right slick-arrow" style="display: block;"></button>',
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
+                    //mobileFirst: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 5,
+                                slidesToScroll: 5
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                appendArrows: false,
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        }
+                    ]
+                });
+
+            });
+
+
+            if (wh > 481) {
+
+                var tileWidth = Math.floor($(window).innerWidth() / 6);
+                var growFactor = 1.5;
+                var moveLeft = -(tileWidth * (growFactor - 1) / 2);
+                var moveRight = (tileWidth - 10) * (growFactor - 1);
+
+                $('.tile').hover(function () {
+
+                    $(this).parent().parent().find('.tile').css('opacity', '0.3');
+                    $(this).css('opacity', '1');
+                    $(this).find('.tile_details').css('opacity', '1');
+                    $(this).find('.tile_play').delay(800).css('opacity', '0.8');
+
+                }, function () {
+
+                    $('.tile').css('opacity', '1');
+                    $(this).find('.tile_details').css('opacity', '0');
+                    $(this).find('.tile_play').delay(800).css('opacity', '0');
+
+                });
+
+                $('head').append('<style type="text/css">' +
+                    '.carousels:hover {transform: translate3d(0px, 0, 0);}' +
+                    '.carousels:hover .tile:hover {transform: scale(' + growFactor + ');opacity: 1;}' +
+                    '.carousels .tile:hover ~ .tile {transform: translate3d(' + moveRight + 'px, 0, 0);}' +
+                    '</style>');
+
+            } else {
+
+                $('.tile_details').css('opacity', '1');
+
+            }
+
+            setTimeout(function () {
+                $(".streamium-loading").fadeOut();
+            }, 2000);
+
+        });
+    </script>
+}

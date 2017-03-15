@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\bootstrap-theme.css" />
+    <Content Include="wwwroot\css\bootstrap.min.css" />
+    <Content Include="wwwroot\css\font-awesome.css" />
+    <Content Include="wwwroot\css\font-awesome.min.css" />
+    <Content Include="wwwroot\css\info.css" />
+    <Content Include="wwwroot\css\info.min.css" />
+    <Content Include="wwwroot\css\main.min.css" />
+    <Content Include="wwwroot\css\menu.css" />
+    <Content Include="wwwroot\css\menu.min.css" />
+    <Content Include="wwwroot\css\modal.css" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="wwwroot\fonts\icomoon.eot" />
+    <Content Include="wwwroot\fonts\icomoon.svg" />
+    <Content Include="wwwroot\fonts\icomoon.ttf" />
+    <Content Include="wwwroot\fonts\icomoon.woff" />
+    <Content Include="wwwroot\fonts\proximanova-regular.eot" />
+    <Content Include="wwwroot\fonts\proximanova-regular.svg" />
+    <Content Include="wwwroot\fonts\proximanova-regular.ttf" />
+    <Content Include="wwwroot\fonts\proximanova-regular.woff" />
+    <Content Include="wwwroot\fonts\proximanovaalt-bold.eot" />
+    <Content Include="wwwroot\fonts\proximanovaalt-bold.svg" />
+    <Content Include="wwwroot\fonts\proximanovaalt-bold.ttf" />
+    <Content Include="wwwroot\fonts\proximanovaalt-bold.woff" />
+    <Content Include="wwwroot\fonts\proximanovalight.eot" />
+    <Content Include="wwwroot\fonts\proximanovalight.svg" />
+    <Content Include="wwwroot\fonts\proximanovalight.ttf" />
+    <Content Include="wwwroot\fonts\proximanovalight.woff" />
+    <Content Include="wwwroot\fonts\proximanovasemibold.eot" />
+    <Content Include="wwwroot\fonts\proximanovasemibold.svg" />
+    <Content Include="wwwroot\fonts\proximanovasemibold.ttf" />
+    <Content Include="wwwroot\fonts\proximanovasemibold.woff" />
+    <Content Include="wwwroot\JsDownload\1280px-Star_Wars_Logo.svg_-600x338.png" />
+    <Content Include="wwwroot\JsDownload\1280px-Star_Wars_Logo.svg_.png" />
+    <Content Include="wwwroot\JsDownload\ajax-loader.gif" />
+    <Content Include="wwwroot\JsDownload\avatar__131216143856-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\avengers-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\bootstrap.min.css" />
+    <Content Include="wwwroot\JsDownload\bootstrap.min.js" />
+    <Content Include="wwwroot\JsDownload\cart-fragments.min.js.download" />
+    <Content Include="wwwroot\JsDownload\comments.css" />
+    <Content Include="wwwroot\JsDownload\comments.js.download" />
+    <Content Include="wwwroot\JsDownload\css" />
+    <Content Include="wwwroot\JsDownload\css.css" />
+    <Content Include="wwwroot\JsDownload\fightclub-1-1600x809.jpg" />
+    <Content Include="wwwroot\JsDownload\fightclub-1-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\Finding_Nemo_1024-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\font-awesome.css" />
+    <Content Include="wwwroot\JsDownload\fonts\slick.eot" />
+    <Content Include="wwwroot\JsDownload\fonts\slick.svg" />
+    <Content Include="wwwroot\JsDownload\fonts\slick.ttf" />
+    <Content Include="wwwroot\JsDownload\fonts\slick.woff" />
+    <Content Include="wwwroot\JsDownload\frontend.css" />
+    <Content Include="wwwroot\JsDownload\frontend.js.download" />
+    <Content Include="wwwroot\JsDownload\info.css" />
+    <Content Include="wwwroot\JsDownload\jquery-migrate.min.js.download" />
+    <Content Include="wwwroot\JsDownload\jquery.blockUI.min.js.download" />
+    <Content Include="wwwroot\JsDownload\jquery.cookie.min.js.download" />
+    <Content Include="wwwroot\JsDownload\jquery.flexslider-min.js.download" />
+    <Content Include="wwwroot\JsDownload\jquery.js.download" />
+    <Content Include="wwwroot\JsDownload\jquery.mobile.custom.min.js.download" />
+    <Content Include="wwwroot\JsDownload\main.css" />
+    <Content Include="wwwroot\JsDownload\main.js" />
+    <Content Include="wwwroot\JsDownload\main.js.download" />
+    <Content Include="wwwroot\JsDownload\main.min.js" />
+    <Content Include="wwwroot\JsDownload\masonry.pkgd.min.js.download" />
+    <Content Include="wwwroot\JsDownload\maxresdefault-600x338(1).jpg" />
+    <Content Include="wwwroot\JsDownload\maxresdefault-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\menu.css" />
+    <Content Include="wwwroot\JsDownload\menu.js.download" />
+    <Content Include="wwwroot\JsDownload\modernizr.min.js.download" />
+    <Content Include="wwwroot\JsDownload\Screen-Shot-2016-11-10-at-02.51.42-600x338.png" />
+    <Content Include="wwwroot\JsDownload\Screen-Shot-2016-11-10-at-02.51.42.png" />
+    <Content Include="wwwroot\JsDownload\scripts.min.js.download" />
+    <Content Include="wwwroot\JsDownload\silenceofthelambs-600x338.png" />
+    <Content Include="wwwroot\JsDownload\slick-theme.css" />
+    <Content Include="wwwroot\JsDownload\slick.css" />
+    <Content Include="wwwroot\JsDownload\slick.min.js.download" />
+    <Content Include="wwwroot\JsDownload\style.css" />
+    <Content Include="wwwroot\JsDownload\styles.min.css" />
+    <Content Include="wwwroot\JsDownload\terminator-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\The-40-Year-Old-Virgin1-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\thor_movie_multi_monitor-hd-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\tintin-1-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\titanic_movie-hd-1-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\wintersbone-600x338.jpg" />
+    <Content Include="wwwroot\JsDownload\woocommerce(1).css" />
+    <Content Include="wwwroot\JsDownload\woocommerce-layout.css" />
+    <Content Include="wwwroot\JsDownload\woocommerce-smallscreen.css" />
+    <Content Include="wwwroot\JsDownload\woocommerce.css" />
+    <Content Include="wwwroot\JsDownload\woocommerce.min.js.download" />
+    <Content Include="wwwroot\JsDownload\wp-embed.min.js.download" />
+    <Content Include="wwwroot\JsDownload\wp-emoji-release.min.js.download" />
+    <Content Include="wwwroot\js\bootstrap.js" />
+    <Content Include="wwwroot\js\bootstrap.min.js" />
+    <Content Include="wwwroot\js\comments.js" />
+    <Content Include="wwwroot\js\info.js" />
+    <Content Include="wwwroot\js\info.min.js" />
+    <Content Include="wwwroot\js\jquery-2.1.1.js" />
+    <Content Include="wwwroot\js\jquery.flexslider-min.js" />
+    <Content Include="wwwroot\js\jquery.mobile.custom.min.js" />
+    <Content Include="wwwroot\js\main.js" />
+    <Content Include="wwwroot\js\main.min.js" />
+    <Content Include="wwwroot\js\masonry.pkgd.min.js" />
+    <Content Include="wwwroot\js\menu.js" />
+    <Content Include="wwwroot\js\menu.min.js" />
+    <Content Include="wwwroot\js\modal.js" />
+    <Content Include="wwwroot\js\modal.min.js" />
+    <Content Include="wwwroot\js\modernizr.js" />
+    <Content Include="wwwroot\js\modernizr.min.js" />
+    <Content Include="wwwroot\js\npm.js" />
+    <Content Include="wwwroot\js\velocity.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.21.0.760" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
